@@ -1,8 +1,17 @@
 UserTodoApp::Application.routes.draw do
+ 
+  get "users/login"
+
+  get "users/new_user" => "users#new_user", :as => :signup
+
+  get "users/logout"=> "users#logout", :as => :logout
+
   get "todos/index"
   #match "todos/delete" => "todos#delete", :as => :delete
   match "todos/add"=> "todos#add", :via => :post
   match "todos/complete" => "todos#complete", :via => :post
+  match "users/signin"=> "users#signin", :via => :post
+  match "users/make_new_account"=> "users#make_new_account", :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,10 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150622081621) do
+ActiveRecord::Schema.define(:version => 20150623001019) do
+
+  create_table "add_user_id_to_todos", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "remove_user_id_from_todos", :force => true do |t|
+    t.string   "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "todos", :force => true do |t|
     t.string   "todo_item"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

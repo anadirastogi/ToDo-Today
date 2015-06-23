@@ -4,7 +4,7 @@
       <h1>Your Todo App</h1>
       <hr>
       <br/>
-      <h2 style="margin-top:-5%">All your todos here</h2>
+      <h2 style="margin-top:-5%">Hi <%= @t=User.find(@user).username %> , All your todos here</h2>
   
    <% 
 =begin %>
@@ -44,6 +44,7 @@
 <%= submit_tag("Complete Todos", :class=>"btn btn-success") %>
 <%end %>
       
+      <%= link_to "Log out", logout_path, :class => "btn"%>
       </div> <!-- well -->
      
     </div> <!-- span4 -->

@@ -1,0 +1,18 @@
+<% if flash[:error] %>
+   <div class="alert alert-error">
+    <%= flash[:error] %>
+   </div>
+ <%end%>
+<%= form_tag("/users/make_new_account/", :method => "post") do %>
+ <%= label_tag :username %>
+
+      <%= text_field_tag :username, params[:username] %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password, params[:password] %>
+
+      <%= label_tag :confirm_password %>
+      <%= password_field_tag :confirm_password, params[:confirm_password] %>
+
+      <%= submit_tag "Make Account", class: "btn btn-large btn-primary" %>
+<%end%>
