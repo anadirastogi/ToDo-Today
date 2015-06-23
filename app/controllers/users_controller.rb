@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to "/todos/index" and return     	
       end
       flash[:error]="Error"
-      redirect_to :action => 'login' 
+      redirect_to :action => 'login'
   end
 
 
